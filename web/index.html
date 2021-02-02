@@ -1,19 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Résumé des commandes Docker</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
-    <h1>Coucou depuis nginx dans mon docker</h1>
+    <h1>Résumé des commandes Docker</h1>
     <article>
-        <h2 style="color:red">Premier article</h2>
+        <h2>Lancer un container</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique asperiores, mollitia quam, incidunt eligendi ratione, sapiente vitae inventore id officiis ipsum commodi libero aspernatur deserunt iure. Dicta esse ducimus obcaecati.
-            Natus laboriosam animi nisi explicabo soluta reprehenderit, cum vel architecto ullam facere tempore, similique beatae qui ut vitae dolores? Architecto dolor illum voluptate fugit obcaecati? Sapiente culpa ea molestiae expedita!
+            Le container se lance, éxecute la commande renseigné dans le Dockerfile de l'image et s'arrête.
+            Ici un contianer hello-world de docker.
         </p>
+        <p>Note: si la commande lance un serveur ou attend une reponse, le container ne s'arretera pas. </p>
+        <code>docker run hello-world</code>
+        
+        <ul>Liste des arguments utiles:
+            <li><code>-n</code> ou <code>--name hello-world</code> : donne un nom au container</li>
+            <li><code>-p</code> ou <code>--publish 8080:3000</code> : indique les redirections de ports au sein de Docker. Une requête sur le port 8080 sera redirigée dans Docker sur le port 3000</li>
+            <li><code>-e</code> ou <code>--environement MYSQL_ROOT_PASSWORD=poulet</code> : Au sein du container la variable d'enironnement MYSQL_ROOT_PASSWORD vaudra poulet</li>
+            <li><code>-d</code> ou <code>--detach</code> : indique qu'on souhaite lancer le container en mode détaché. (sans la console)</li>
+        </ul>
+    </article>
+    <article>
+        <h2>Arreter un container</h2>
+        <p>Ici un contianer hello-world de docker</p>
+        <code>docker stop hello-world</code>
+    </article>
+    <article>
+        <h2>Relancer un container</h2>
+        <p>Ici un contianer hello-world de docker</p>
+        <code>docker start hello-world</code>
+    </article>
+    <article>
+        <h2>Lister les containers</h2>
+        <p>Par défaut, cette commande affiche les containers en cours d'éxécution. Ajoutez l'option <code>-a</code> pour lister tous les containers</p>
+        <code>docker ps</code>
+    </article>
+    <article>
+        <h2>Lister les images</h2>
+        <p>
+            Les images sont des bases sur lequelles on peut se reposer pour construire de nouvelles images ou juste pour lancer un container.
+        </p>
+        <code>docker images</code>
+    </article>
+    <article>
+        <h2>Supprimer une image</h2>
+        <code>docker rmi 26e2df4264a</code>
+    </article>
+    <article>
+        <h2>Afficher les logs d'un container</h2>
+        <p>Utile pour afficher les informations retournés par une commande.</p>
+        <code>docker logs 26e2df4264a</code>
+    </article>
+    <article>
+        <h2>Attacher la console d'un container</h2>
+        <p>Permet d'afficher les nouvelles lignes retournés par une commande du container</p>
+        <code>docker logs 26e2df4264a</code>
     </article>
 </body>
 </html>
