@@ -1,0 +1,17 @@
+code {
+    color: whitesmoke;
+    background-color: rgb(92, 92, 92);
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+article {
+    padding: 1em;
+    padding-top: 0em;
+    margin: 2vh;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.1);
+}
+li {
+    padding: 1em;
+}
